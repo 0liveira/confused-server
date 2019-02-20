@@ -10,14 +10,14 @@ app.use(bodyParser.json())
 app.get('/', (req, res) => {
   const isSuccess = moment().minute() % 2 === 0
 
-  const responseStatusCode = isSuccess ? 200 : 500
+  const responseStatusCode = isSuccess ? 200 : 418
   res.sendStatus(responseStatusCode)
 })
 
 app.post('/', (req, res) => {
   const isSuccess = moment().minute() % 2 === 0
 
-  const responseStatusCode = isSuccess ? 200 : 500
+  const responseStatusCode = isSuccess ? 200 : 418
   res.status(responseStatusCode).send('<foo>123</foo>')
 })
 
